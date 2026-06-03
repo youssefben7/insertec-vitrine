@@ -1,4 +1,5 @@
 import ScrollReveal from "./ScrollReveal";
+import ProductCarousel from "./ProductCarousel";
 
 const products = [
   {
@@ -205,6 +206,11 @@ export default function Products() {
             </ScrollReveal>
           ))}
         </div>
+
+        {/* Carousel of actual product images */}
+        <ScrollReveal className="mt-16 sm:mt-24">
+          <ProductCarousel />
+        </ScrollReveal>
 
         {/* Bottom CTA */}
         <ScrollReveal className="text-center mt-14">

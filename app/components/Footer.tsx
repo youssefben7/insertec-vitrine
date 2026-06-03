@@ -160,7 +160,25 @@ export default function Footer() {
                   id="contact-form"
                   onSubmit={(e) => {
                     e.preventDefault();
-                    window.location.href = "mailto:insertecinfo@gmail.com";
+                    const name = (document.getElementById("contact-name") as HTMLInputElement)?.value || "";
+                    const phone = (document.getElementById("contact-phone") as HTMLInputElement)?.value || "";
+                    const email = (document.getElementById("contact-email") as HTMLInputElement)?.value || "";
+                    const type = (document.getElementById("contact-type") as HTMLSelectElement)?.value || "";
+                    const message = (document.getElementById("contact-message") as HTMLTextAreaElement)?.value || "";
+
+                    const subject = encodeURIComponent(`[INSERTEC MAROC] Demande d'intervention / Devis`);
+                    const body = encodeURIComponent(
+                      `Bonjour,\n\n` +
+                      `Vous avez reçu une nouvelle demande depuis le site web :\n\n` +
+                      `• Nom complet : ${name}\n` +
+                      `• Téléphone : ${phone}\n` +
+                      `• Email : ${email || "Non renseigné"}\n` +
+                      `• Type de demande : ${type || "Non renseigné"}\n\n` +
+                      `• Message :\n${message}\n\n` +
+                      `Cordialement.`
+                    );
+
+                    window.location.href = `mailto:insertecinfo@gmail.com?subject=${subject}&body=${body}`;
                   }}
                   className="space-y-4"
                 >
