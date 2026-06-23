@@ -378,7 +378,7 @@ export default function Footer() {
             </div>
             <div className="pt-4 text-center">
               <p className="text-[10px] sm:text-xs text-white/30 tracking-wide font-medium">
-                Designed by youssefben7
+                Designed by <a href="https://github.com/youssefben7" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200">youssefben7</a>
               </p>
             </div>
           </div>
