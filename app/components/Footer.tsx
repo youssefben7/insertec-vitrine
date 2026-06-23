@@ -376,6 +376,11 @@ export default function Footer() {
                 <strong>INSERTEC SARL AU</strong> — RC: 296519 — IF: 71771832 — Patente: 34216642 — Siège : 6 rue zine ishak n° 7 angle bd ibn tachfine, Casablanca — www.insertec.ma
               </p>
             </div>
+            <div className="pt-4 text-center">
+              <p className="text-[10px] sm:text-xs text-white/30 tracking-wide font-medium">
+                Designed by youssefben7
+              </p>
+            </div>
           </div>
         </div>
       </footer>

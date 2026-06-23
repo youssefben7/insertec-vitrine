@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Music } from "lucide-react";
+import { Music, Menu, X } from "lucide-react";
 
 const Facebook = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
@@ -101,7 +101,7 @@ export default function Navbar() {
           </button>
 
           {/* Desktop Links */}
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
               <button
                 key={link.href}
@@ -147,7 +147,7 @@ export default function Navbar() {
               <span>0660 12 11 44</span>
             </a>
 
-            <div className="hidden lg:flex items-center gap-4 ml-4">
+            <div className="hidden md:flex items-center gap-4 ml-4">
               <a href="https://www.facebook.com/profile.php?id=61591242990810" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                 <Facebook className="text-gray-300 hover:text-orange-500 transition-colors duration-200 h-5 w-5 cursor-pointer" />
               </a>
@@ -163,73 +163,65 @@ export default function Navbar() {
             <button
               id="mobile-menu-btn"
               onClick={() => setMenuOpen(!menuOpen)}
-              className="lg:hidden flex flex-col gap-1.5 p-2 rounded-lg hover:bg-white/10 transition-colors cursor-pointer"
+              className="md:hidden p-2 rounded-lg hover:bg-white/10 transition-colors cursor-pointer text-white"
               aria-label="Ouvrir le menu"
               aria-expanded={menuOpen}
             >
-              <span className={`block w-5 h-0.5 bg-white rounded transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
-              <span className={`block w-5 h-0.5 bg-white rounded transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} />
-              <span className={`block w-5 h-0.5 bg-white rounded transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+              {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         {/* Mobile menu */}
         <div
-          className={`w-full lg:hidden overflow-hidden transition-all duration-300 ${
-            menuOpen ? "max-h-96 opacity-100 pb-4 pt-4" : "max-h-0 opacity-0"
+          className={`w-full md:hidden overflow-hidden transition-all duration-500 ease-in-out ${
+            menuOpen ? "max-h-[800px] opacity-100 mt-4" : "max-h-0 opacity-0"
           }`}
         >
-          <div className="bg-[#0f2044]/95 backdrop-blur-xl rounded-2xl border border-white/10 p-4 space-y-1">
-            {navLinks.map((link) => (
-              <button
-                key={link.href}
-                onClick={() => handleNavClick(link.href)}
-                className={`w-full text-left px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 cursor-pointer ${
-                  activeLink === link.href
-                    ? "bg-[#f97316]/20 text-[#f97316] border border-[#f97316]/30"
-                    : "text-white/70 hover:text-white hover:bg-white/5"
-                }`}
-              >
-                {link.label}
-              </button>
-            ))}
-            <div className="pt-2 space-y-2">
+          <div className="bg-black/95 backdrop-blur-lg rounded-3xl border border-white/10 flex flex-col gap-6 p-6 shadow-2xl">
+            <div className="flex flex-col gap-2">
+              {navLinks.map((link) => (
+                <button
+                  key={link.href}
+                  onClick={() => handleNavClick(link.href)}
+                  className={`w-full text-left px-5 py-4 rounded-xl text-base font-semibold transition-all duration-200 cursor-pointer ${
+                    activeLink === link.href
+                      ? "bg-[#f97316]/20 text-[#f97316] border border-[#f97316]/30"
+                      : "text-white/80 hover:text-white hover:bg-white/10"
+                  }`}
+                >
+                  {link.label}
+                </button>
+              ))}
+            </div>
+            
+            <div className="flex flex-wrap gap-4 mt-2">
               <a
-                href="tel:0522614414"
-                className="flex items-center justify-center gap-2 w-full bg-white/5 border border-white/10 text-white font-semibold text-sm px-5 py-3 rounded-xl cursor-pointer hover:bg-white/10"
+                href="tel:+212522614414"
+                className="flex-1 min-w-[200px] flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-medium border border-orange-500/30 bg-orange-500/10 text-orange-400 hover:bg-orange-500 hover:text-white transition-all shadow-lg"
               >
-                <svg className="w-4 h-4 text-[#f97316]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                Appeler Fixe: 0522 61 44 14
+                <span>Appeler: 0522 61 44 14</span>
               </a>
-              <a
-                href="tel:0661618945"
-                className="flex items-center justify-center gap-2 w-full bg-white/5 border border-white/10 text-white font-semibold text-sm px-5 py-3 rounded-xl cursor-pointer hover:bg-white/10"
-              >
-                <svg className="w-4 h-4 text-[#f97316]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-                Appeler GSM 1: 0661 61 89 45
-              </a>
+              
               <a
                 href="https://wa.me/212660121144"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 w-full bg-green-500/10 border border-green-500/20 text-white font-semibold text-sm px-5 py-3 rounded-xl cursor-pointer hover:bg-green-500/20"
+                className="flex-1 min-w-[200px] flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-medium border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500 hover:text-white transition-all shadow-lg"
               >
-                <svg className="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.458L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.863-9.864.001-2.63-1.023-5.101-2.884-6.963C16.59 1.916 14.116.892 11.488.892 6.05 10.428 5.626 5.626 5.626v.012c0 1.706.452 3.376 1.311 4.848l.515.87-.323 1.182-.33 1.206 1.24-.325 1.282-.336.56.944z"/>
                 </svg>
-                WhatsApp: 0660 12 11 44
+                <span>WhatsApp</span>
               </a>
-              <button
-                onClick={() => handleNavClick("#contact")}
-                className="w-full bg-gradient-to-r from-[#f97316] to-[#ea580c] text-white font-semibold text-sm px-5 py-3 rounded-xl cursor-pointer font-bold"
-                id="mobile-cta-contact"
-              >
-                Demander une intervention
-              </button>
             </div>
+            <button
+              onClick={() => handleNavClick("#contact")}
+              className="w-full mt-2 bg-gradient-to-r from-[#f97316] to-[#ea580c] text-white font-bold text-sm px-5 py-4 rounded-xl cursor-pointer shadow-lg hover:scale-[1.02] transition-transform"
+            >
+              Demander une intervention rapide
+            </button>
           </div>
         </div>
     </header>
