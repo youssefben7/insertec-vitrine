@@ -9,11 +9,6 @@ const stats = [
   { value: "2000+", label: "Pièces en stock" },
 ];
 
-const floatingBadges = [
-  { icon: "🔧", text: "Expert certifié", top: "18%", left: "4%", delay: "0s" },
-  { icon: "⚡", text: "Intervention rapide", top: "60%", right: "4%", delay: "0.5s" },
-];
-
 export default function Hero() {
   const counterRefs = useRef<(HTMLSpanElement | null)[]>([]);
 
@@ -102,26 +97,6 @@ export default function Hero() {
           <circle cx="900" cy="600" r="4" fill="#f97316" />
         </svg>
       </div>
-
-      {/* Floating badges */}
-      {floatingBadges.map((badge, i) => (
-        <div
-          key={i}
-          className="absolute hidden xl:flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-4 py-2.5 shadow-xl"
-          style={
-            {
-              top: badge.top,
-              left: badge.left,
-              right: badge.right,
-              animation: `float 6s ease-in-out infinite`,
-              animationDelay: badge.delay,
-            } as React.CSSProperties
-          }
-        >
-          <span className="text-xl">{badge.icon}</span>
-          <span className="text-white text-sm font-medium whitespace-nowrap">{badge.text}</span>
-        </div>
-      ))}
 
       {/* Main content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 lg:pt-32 lg:pb-24">
