@@ -200,12 +200,42 @@ body {
 
 /* Scrollbar styling */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0f2044;
+  background: #050d1f;
 }
 ::-webkit-scrollbar-thumb {
+  background: #3b6abf;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
   background: #f97316;
-  border-radius: 3px;
+}
+
+/* Custom Selection */
+::selection {
+  background-color: #f97316;
+  color: #ffffff;
+}
+::-moz-selection {
+  background-color: #f97316;
+  color: #ffffff;
+}
+
+/* Glassmorphism Utilities */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+}
+
+.glass-nav {
+  background: rgba(5, 13, 31, 0.9);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
 }

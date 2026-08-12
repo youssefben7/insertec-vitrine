@@ -1,5 +1,6 @@
 import ScrollReveal from "./ScrollReveal";
 import ProductCarousel from "./ProductCarousel";
+import Image from "next/image";
 
 const products = [
   {
@@ -100,7 +101,7 @@ export default function Products() {
   return (
     <section
       id="products"
-      className="relative py-24 lg:py-32 bg-[#f0f6ff] overflow-hidden"
+      className="relative py-16 sm:py-24 lg:py-32 bg-[#f0f6ff] overflow-hidden"
       aria-label="Catalogue pièces de rechange"
     >
       {/* Subtle top wave */}
@@ -115,7 +116,7 @@ export default function Products() {
                 <span className="w-2 h-2 rounded-full bg-[#f97316]" />
                 <span className="text-[#f97316] text-sm font-semibold tracking-widest uppercase">Catalogue Produits</span>
               </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0f2044] mb-5 leading-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0f2044] mb-5 leading-[1.1] tracking-tight">
                 Pièces de rechange{" "}
                 <span className="relative inline-block">
                   <span className="gradient-text">disponibles</span>
@@ -129,7 +130,13 @@ export default function Products() {
               </p>
             </div>
             <div className="relative h-64 sm:h-72 lg:h-80 rounded-3xl overflow-hidden shadow-2xl border-4 border-white group">
-              <img src="/images/rechange.jpg" alt="Pièces de rechange INSERTEC" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <Image 
+                src="/images/rechange.jpg" 
+                alt="Pièces de rechange INSERTEC MAROC - Stock Permanent" 
+                fill
+                style={{ objectFit: 'cover' }}
+                className="group-hover:scale-105 transition-transform duration-700" 
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0f2044]/40 to-transparent mix-blend-overlay" />
             </div>
           </div>
@@ -141,7 +148,7 @@ export default function Products() {
             <ScrollReveal key={product.id} variant="scale" delay={index * 80}>
               <article
                 id={product.id}
-                className="group h-full bg-white rounded-3xl border border-[#b8cef0]/40 shadow-sm overflow-hidden card-glow transition-all duration-400 hover:-translate-y-2 cursor-pointer"
+                className="group h-full bg-white rounded-3xl border border-[#b8cef0]/30 shadow-sm overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(15,32,68,0.08)] cursor-pointer"
               >
                 {/* Card top accent */}
                 <div
@@ -196,8 +203,8 @@ export default function Products() {
                   {/* CTA button */}
                   <button
                     id={`${product.id}-btn`}
-                    className="w-full py-3 rounded-xl text-sm font-semibold transition-all duration-300 border cursor-pointer
-                    border-[#f97316]/30 text-[#f97316] hover:bg-[#f97316] hover:text-white hover:shadow-[0_4px_20px_rgba(249,115,22,0.3)]"
+                    className="w-full py-3.5 rounded-xl text-sm font-semibold transition-all duration-300 border cursor-pointer
+                    border-[#f97316]/30 text-[#f97316] hover:bg-[#f97316] hover:text-white hover:shadow-[0_8px_20px_rgba(249,115,22,0.3)] active:scale-95 focus:ring-4 focus:ring-[#f97316]/30 focus:outline-none"
                   >
                     Demander un devis
                   </button>
@@ -215,18 +222,29 @@ export default function Products() {
         {/* Bottom CTA */}
         <ScrollReveal className="text-center mt-14">
           <p className="text-[#152d5e]/60 text-base mb-6">
-            Vous ne trouvez pas votre référence ? Contactez-nous directement.
+            Vous souhaitez voir plus de pièces ou vous ne trouvez pas votre référence ?
           </p>
-          <a
-            href="mailto:insertecinfo@gmail.com"
-            id="products-email-cta"
-            className="inline-flex items-center gap-3 bg-[#0f2044] text-white font-semibold px-8 py-4 rounded-full hover:bg-[#152d5e] hover:shadow-xl hover:scale-105 transition-all duration-300"
-          >
-            <svg className="w-5 h-5 text-[#f97316]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-            Envoyer une demande spéciale
-          </a>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+            <a
+              href="/catalogue"
+              className="inline-flex items-center justify-center gap-3 bg-[#f97316] text-white font-semibold px-8 py-4 min-h-[56px] rounded-full hover:bg-[#ea580c] hover:shadow-[0_10px_30px_rgba(249,115,22,0.4)] active:scale-95 focus:ring-4 focus:ring-[#f97316]/40 transition-all duration-300 w-full sm:w-auto"
+            >
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+              </svg>
+              Voir le catalogue complet
+            </a>
+            <a
+              href="mailto:insertecinfo@gmail.com"
+              id="products-email-cta"
+              className="inline-flex items-center justify-center gap-3 bg-[#0f2044] text-white font-semibold px-8 py-4 min-h-[56px] rounded-full hover:bg-[#152d5e] hover:shadow-[0_10px_30px_rgba(15,32,68,0.3)] active:scale-95 focus:ring-4 focus:ring-[#0f2044]/40 transition-all duration-300 w-full sm:w-auto"
+            >
+              <svg className="w-5 h-5 text-[#f97316]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              Envoyer une demande
+            </a>
+          </div>
         </ScrollReveal>
       </div>
     </section>

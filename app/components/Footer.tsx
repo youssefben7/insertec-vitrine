@@ -1,6 +1,7 @@
 "use client";
 
 import ScrollReveal from "./ScrollReveal";
+import Image from "next/image";
 
 const contactItems = [
   {
@@ -99,7 +100,7 @@ export default function Footer() {
       {/* Contact CTA Band */}
       <section
         id="contact"
-        className="relative py-20 lg:py-28 bg-[#050d1f] overflow-hidden"
+        className="relative py-16 sm:py-20 lg:py-28 bg-[#050d1f] overflow-hidden"
         aria-label="Section contact INSERTEC MAROC"
       >
         <div className="absolute inset-0 grid-pattern opacity-30 pointer-events-none" />
@@ -135,9 +136,9 @@ export default function Footer() {
                     href={item.href}
                     target={item.href.startsWith("http") ? "_blank" : undefined}
                     rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="flex items-center gap-4 group"
+                    className="flex items-center gap-4 group cursor-pointer active:scale-95 transition-transform"
                   >
-                    <div className="w-11 h-11 rounded-xl bg-[#f97316]/15 border border-[#f97316]/25 text-[#f97316] flex items-center justify-center flex-shrink-0 group-hover:bg-[#f97316] group-hover:text-white transition-all duration-300">
+                    <div className="w-12 h-12 rounded-2xl glass-panel border border-[#f97316]/25 text-[#f97316] flex items-center justify-center flex-shrink-0 group-hover:bg-[#f97316] group-hover:text-white group-hover:shadow-[0_0_20px_rgba(249,115,22,0.4)] transition-all duration-300">
                       {item.icon}
                     </div>
                     <div>
@@ -153,9 +154,9 @@ export default function Footer() {
 
             {/* Right – Contact form */}
             <ScrollReveal variant="right">
-              <div className="bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-sm">
-                <div className="absolute top-0 left-8 right-8 h-0.5 bg-gradient-to-r from-transparent via-[#f97316]/50 to-transparent rounded-full" />
-                <h3 className="text-white font-bold text-xl mb-6">Envoyer un message</h3>
+              <div className="glass-panel border border-white/10 rounded-3xl p-8 shadow-2xl relative">
+                <div className="absolute top-0 left-8 right-8 h-1 bg-gradient-to-r from-transparent via-[#f97316]/50 to-transparent rounded-b-full opacity-70" />
+                <h3 className="text-white font-bold text-2xl mb-6 tracking-tight">Envoyer un message</h3>
                 <form
                   id="contact-form"
                   onSubmit={(e) => {
@@ -250,7 +251,7 @@ export default function Footer() {
                   <button
                     type="submit"
                     id="contact-submit"
-                    className="w-full bg-gradient-to-r from-[#f97316] to-[#ea580c] text-white font-bold py-4 rounded-xl hover:shadow-[0_0_30px_rgba(249,115,22,0.4)] hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
+                    className="w-full bg-gradient-to-r from-[#f97316] to-[#ea580c] text-white font-bold py-4 rounded-xl shadow-[0_0_20px_rgba(249,115,22,0.3)] hover:shadow-[0_0_40px_rgba(249,115,22,0.5)] active:scale-95 focus:ring-4 focus:ring-[#f97316]/40 focus:outline-none transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
@@ -271,9 +272,11 @@ export default function Footer() {
             {/* Brand column */}
             <div className="lg:col-span-2 space-y-5">
               <div className="flex items-center gap-3">
-                <img 
+                <Image 
                   src="/images/logo.png" 
-                  alt="INSERTEC Logo" 
+                  alt="INSERTEC MAROC Logo" 
+                  width={140}
+                  height={48}
                   className="h-12 w-auto object-contain"
                 />
                 <div className="flex flex-col">

@@ -51,40 +51,40 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative py-24 lg:py-32 bg-white overflow-hidden"
+      className="relative py-16 sm:py-24 lg:py-32 bg-white overflow-hidden"
       aria-label="À propos d'INSERTEC MAROC"
     >
       {/* Decorative blob */}
       <div
-        className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full pointer-events-none opacity-[0.04]"
+        className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full pointer-events-none opacity-[0.03]"
         style={{ background: "radial-gradient(circle, #f97316 0%, transparent 70%)" }}
       />
       <div
-        className="absolute -bottom-40 -left-40 w-[400px] h-[400px] rounded-full pointer-events-none opacity-[0.04]"
+        className="absolute -bottom-40 -left-40 w-[400px] h-[400px] rounded-full pointer-events-none opacity-[0.03]"
         style={{ background: "radial-gradient(circle, #0f2044 0%, transparent 70%)" }}
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left – text content */}
           <div className="space-y-8">
             <ScrollReveal variant="left">
-              <div className="inline-flex items-center gap-2 bg-[#f97316]/10 border border-[#f97316]/25 rounded-full px-4 py-1.5 mb-2">
-                <span className="w-2 h-2 rounded-full bg-[#f97316]" />
+              <div className="inline-flex items-center gap-2 bg-[#f97316]/10 border border-[#f97316]/20 rounded-full px-5 py-2 mb-2">
+                <span className="w-2 h-2 rounded-full bg-[#f97316]" style={{ animation: "pulse-glow 2s infinite" }} />
                 <span className="text-[#f97316] text-sm font-semibold tracking-widest uppercase">À propos</span>
               </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0f2044] leading-tight mt-4">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0f2044] leading-[1.1] tracking-tight mt-4">
                 Votre partenaire de confiance depuis plus de{" "}
                 <span className="gradient-text">10 ans</span>
               </h2>
             </ScrollReveal>
 
             <ScrollReveal variant="left" delay={100}>
-              <p className="text-[#152d5e]/65 text-lg leading-relaxed">
-                Fondée à Casablanca en 2014, **INSERTEC** (marque commerciale **INSERTEC MAROC**) s'est imposée comme le spécialiste incontournable dans la vente de pièces de rechange, dépannage, réparation et maintenance de matériel de cuisine professionnelle, grandes cuisines, chaudronnier inox, chambres froides, pâtisserie et buanderie au Maroc.
+              <p className="text-[#152d5e]/70 text-lg leading-relaxed font-medium">
+                Fondée à Casablanca en 2014, <strong className="text-[#0f2044]">INSERTEC MAROC</strong> s'est imposée comme le spécialiste incontournable dans la vente de pièces de rechange, dépannage, réparation et maintenance de matériel de cuisine professionnelle, grandes cuisines, chambres froides et buanderie au Maroc.
               </p>
-              <p className="text-[#152d5e]/65 text-lg leading-relaxed mt-4">
-                Nous assurons plus de 10 ans d'expertise technique de haut niveau au service des hôtels, restaurants, collectivités, pâtisseries, et blanchisseries industrielles à travers tout le Royaume.
+              <p className="text-[#152d5e]/70 text-lg leading-relaxed mt-4 font-medium">
+                Nous assurons une expertise technique de haut niveau au service des hôtels, restaurants, collectivités, pâtisseries, et blanchisseries industrielles à travers tout le Royaume.
               </p>
             </ScrollReveal>
 
@@ -94,14 +94,14 @@ export default function About() {
                 <ScrollReveal key={reason.id} variant="left" delay={i * 80}>
                   <div
                     id={reason.id}
-                    className="group flex gap-4 p-4 rounded-2xl border border-[#b8cef0]/40 bg-[#f0f6ff]/50 hover:border-[#f97316]/30 hover:bg-[#fff7ed]/60 transition-all duration-300"
+                    className="group flex gap-4 p-5 rounded-2xl border border-gray-100 bg-white shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(249,115,22,0.1)] hover:-translate-y-1 hover:border-[#f97316]/20 transition-all duration-300"
                   >
-                    <div className="w-11 h-11 rounded-xl bg-[#0f2044] text-[#f97316] flex items-center justify-center flex-shrink-0 group-hover:bg-[#f97316] group-hover:text-white transition-all duration-300">
+                    <div className="w-12 h-12 rounded-xl bg-[#0f2044] text-white flex items-center justify-center flex-shrink-0 group-hover:bg-[#f97316] group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-md">
                       {reason.icon}
                     </div>
                     <div>
                       <h3 className="text-[#0f2044] font-bold text-sm mb-1">{reason.title}</h3>
-                      <p className="text-[#152d5e]/55 text-xs leading-relaxed">{reason.desc}</p>
+                      <p className="text-[#152d5e]/60 text-xs leading-relaxed font-medium">{reason.desc}</p>
                     </div>
                   </div>
                 </ScrollReveal>

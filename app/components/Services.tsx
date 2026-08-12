@@ -77,11 +77,11 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="relative py-24 lg:py-32 bg-[#050d1f] overflow-hidden"
+      className="relative py-16 sm:py-24 lg:py-32 bg-[#050d1f] overflow-hidden"
       aria-label="Nos services"
     >
       {/* Background decoration */}
-      <div className="absolute inset-0 grid-pattern opacity-40 pointer-events-none" />
+      <div className="absolute inset-0 grid-pattern opacity-30 pointer-events-none" />
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full opacity-5 pointer-events-none"
         style={{ background: "radial-gradient(circle, #f97316 0%, transparent 70%)" }}
@@ -90,15 +90,16 @@ export default function Services() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <ScrollReveal className="text-center mb-16 lg:mb-20">
-          <div className="inline-flex items-center gap-2 bg-[#f97316]/10 border border-[#f97316]/25 rounded-full px-4 py-1.5 mb-6">
-            <span className="w-2 h-2 rounded-full bg-[#f97316]" />
+          <div className="inline-flex items-center gap-2 glass-panel border border-[#f97316]/25 rounded-full px-5 py-2 mb-6">
+            <span className="w-2 h-2 rounded-full bg-[#f97316]" style={{ animation: "pulse-glow 2s infinite" }} />
             <span className="text-[#f97316] text-sm font-semibold tracking-widest uppercase">Nos Services</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-5 leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-6 leading-tight tracking-tight">
             Une expertise complète à votre service
           </h2>
-          <p className="text-white/55 text-lg max-w-3xl mx-auto leading-relaxed">
-            Spécialiste dans la vente de pièces de rechange, dépannage, réparation et maintenance de matériel de cuisine professionnelle, grandes cuisines, chaudronnier inox, chambres froides, pâtisserie et buanderie. Plus de 10 ans d'expertise au service des hôtels, restaurants et institutions au Maroc.
+          <p className="text-white/70 text-lg max-w-3xl mx-auto leading-relaxed font-medium">
+            Spécialiste dans la vente de pièces de rechange, dépannage, réparation et maintenance de matériel de cuisine professionnelle, grandes cuisines, chambres froides et buanderie. 
+            Plus de 10 ans d'expertise au Maroc.
           </p>
         </ScrollReveal>
 
@@ -108,40 +109,46 @@ export default function Services() {
             <ScrollReveal key={service.id} variant={service.variant} delay={service.delay}>
               <article
                 id={service.id}
-                className={`group relative h-full bg-gradient-to-b ${service.bg} border ${service.border} rounded-3xl p-8 transition-all duration-400 hover:-translate-y-2 hover:shadow-2xl cursor-default`}
+                className={`group relative h-full glass-panel border border-white/5 rounded-3xl p-8 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.5)] hover:border-white/10 cursor-default overflow-hidden`}
               >
+                {/* Background ambient glow on hover */}
+                <div 
+                  className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none"
+                  style={{ background: `radial-gradient(circle at center, ${service.color}, transparent)` }}
+                />
+
                 {/* Top accent line */}
                 <div
-                  className="absolute top-0 left-8 right-8 h-0.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  className="absolute top-0 left-0 right-0 h-1 rounded-t-3xl opacity-50 group-hover:opacity-100 transition-opacity duration-500"
                   style={{ background: `linear-gradient(90deg, transparent, ${service.color}, transparent)` }}
                 />
 
                 {/* Icon */}
                 <div
-                  className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110"
-                  style={{ background: `${service.color}20`, color: service.color, border: `1px solid ${service.color}30` }}
+                  className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3 shadow-lg"
+                  style={{ background: `${service.color}15`, color: service.color, border: `1px solid ${service.color}30` }}
                 >
                   {service.icon}
                 </div>
 
                 {/* Content */}
-                <div className="mb-2">
-                  <span className="text-xs font-semibold tracking-widest uppercase" style={{ color: service.color }}>
+                <div className="mb-2 relative z-10">
+                  <span className="text-xs font-bold tracking-widest uppercase" style={{ color: service.color }}>
                     {service.subtitle}
                   </span>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-4 leading-tight">{service.title}</h3>
-                <p className="text-white/55 text-sm leading-relaxed mb-6">{service.description}</p>
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 leading-tight relative z-10">{service.title}</h3>
+                <p className="text-white/60 text-sm leading-relaxed mb-8 relative z-10 font-medium">{service.description}</p>
 
                 {/* Feature list */}
-                <ul className="space-y-2.5">
+                <ul className="space-y-3 relative z-10">
                   {service.features.map((feature) => (
-                    <li key={feature} className="flex items-center gap-3 text-sm text-white/70">
+                    <li key={feature} className="flex items-center gap-3 text-sm text-white/80 font-medium">
                       <span
-                        className="w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center"
-                        style={{ background: `${service.color}20` }}
+                        className="w-6 h-6 rounded-full flex-shrink-0 flex items-center justify-center shadow-inner"
+                        style={{ background: `${service.color}20`, border: `1px solid ${service.color}40` }}
                       >
-                        <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20" style={{ color: service.color }}>
+                        <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20" style={{ color: service.color }}>
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
                       </span>
@@ -151,7 +158,7 @@ export default function Services() {
                 </ul>
 
                 {/* Bottom number decoration */}
-                <div className="absolute bottom-6 right-8 text-6xl font-black opacity-5 text-white select-none">
+                <div className="absolute -bottom-4 -right-2 text-8xl font-black opacity-[0.03] text-white select-none pointer-events-none transition-transform duration-500 group-hover:scale-110">
                   {String(services.indexOf(service) + 1).padStart(2, "0")}
                 </div>
               </article>

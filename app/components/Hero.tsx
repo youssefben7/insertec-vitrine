@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 
 const stats = [
   { value: "10+", label: "Ans d'expertise B2B" },
@@ -116,7 +117,7 @@ export default function Hero() {
 
             {/* Headline */}
             <h1
-              className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-[1.1] tracking-tight"
+              className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-[1.05] tracking-tighter drop-shadow-sm"
               style={{ animation: "fadeInUp 0.7s ease 0.1s both" }}
             >
               Votre expert en{" "}
@@ -128,7 +129,7 @@ export default function Hero() {
 
             {/* Subtext */}
             <p
-              className="text-white/65 text-lg sm:text-xl leading-relaxed max-w-lg"
+              className="text-white/70 text-lg sm:text-xl leading-relaxed max-w-xl font-medium tracking-wide"
               style={{ animation: "fadeInUp 0.7s ease 0.2s both" }}
             >
               Avec plus de 10 ans d'expertise au service des professionnels du Maroc, INSERTEC MAROC est votre partenaire de confiance pour l'installation, la maintenance technique et le négoce de pièces de rechange d'origine.
@@ -136,20 +137,20 @@ export default function Hero() {
 
             {/* CTAs */}
             <div
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-col sm:flex-row gap-4 mt-2"
               style={{ animation: "fadeInUp 0.7s ease 0.35s both" }}
             >
               <button
                 onClick={() => scrollTo("contact")}
                 id="hero-cta-primary"
-                className="group flex items-center justify-center gap-3 bg-gradient-to-r from-[#f97316] to-[#ea580c] text-white font-bold text-base px-8 py-4 rounded-full hover:shadow-[0_0_40px_rgba(249,115,22,0.5)] hover:scale-105 transition-all duration-300 cursor-pointer"
+                className="group flex items-center justify-center gap-3 bg-gradient-to-r from-[#f97316] to-[#ea580c] text-white font-bold text-base px-8 py-4 rounded-full shadow-[0_0_20px_rgba(249,115,22,0.3)] hover:shadow-[0_0_40px_rgba(249,115,22,0.6)] active:scale-95 focus:ring-4 focus:ring-[#f97316]/50 focus:outline-none transition-all duration-300 cursor-pointer min-h-[56px]"
               >
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
                 Demander une intervention
                 <svg
-                  className="w-4 h-4 group-hover:translate-x-1 transition-transform"
+                  className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300"
                   fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -159,9 +160,9 @@ export default function Hero() {
               <button
                 onClick={() => scrollTo("products")}
                 id="hero-cta-catalogue"
-                className="group flex items-center justify-center gap-3 bg-white/10 border border-white/25 text-white font-semibold text-base px-8 py-4 rounded-full hover:bg-white/20 hover:border-white/40 transition-all duration-300 cursor-pointer backdrop-blur-sm"
+                className="group flex items-center justify-center gap-3 glass-panel text-white font-semibold text-base px-8 py-4 rounded-full hover:bg-white/10 hover:border-white/40 active:scale-95 focus:ring-4 focus:ring-white/20 focus:outline-none transition-all duration-300 cursor-pointer min-h-[56px]"
               >
-                <svg className="w-5 h-5 text-[#f97316]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <svg className="w-5 h-5 text-[#f97316] group-hover:scale-110 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                 </svg>
                 Consulter le catalogue
@@ -185,26 +186,29 @@ export default function Hero() {
           </div>
 
           {/* Right column — stats + visual */}
-          <div className="flex flex-col gap-6" style={{ animation: "fadeInRight 0.8s ease 0.3s both" }}>
+          <div className="flex flex-col gap-8" style={{ animation: "fadeInRight 0.8s ease 0.3s both" }}>
             {/* Visual industrial card */}
-            <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-md shadow-2xl">
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#f97316] to-[#3b6abf] z-10" />
-              <div className="w-full h-48 sm:h-56 relative overflow-hidden group">
-                <img 
+            <div className="relative rounded-3xl overflow-hidden glass-panel">
+              <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#f97316] to-[#3b6abf] z-10" />
+              <div className="w-full h-48 sm:h-60 relative overflow-hidden group">
+                <Image 
                   src="/images/tech.png" 
-                  alt="Technicien certifié" 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                  alt="Technicien certifié INSERTEC MAROC - Intervention rapide" 
+                  fill
+                  style={{ objectFit: 'cover' }}
+                  priority
+                  className="group-hover:scale-105 transition-transform duration-700 ease-out" 
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#050d1f] to-transparent opacity-90" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#050d1f] to-transparent opacity-95 mix-blend-multiply" />
               </div>
-              <div className="p-8 pt-4">
-                <p className="text-center text-white/70 text-sm leading-relaxed">
-                  Des techniciens certifiés interviennent sur vos équipements <strong className="text-white">sous 24h</strong> dans tout le Maroc.
+              <div className="p-8 pt-6 relative z-20 -mt-12 bg-gradient-to-b from-transparent to-[#050d1f]">
+                <p className="text-center text-white/80 text-base leading-relaxed font-medium">
+                  Des techniciens certifiés interviennent sur vos équipements <strong className="text-white font-bold">sous 24h</strong> dans tout le Maroc.
                 </p>
                 {/* Mini status bar */}
-                <div className="mt-6 flex items-center gap-3 bg-white/5 rounded-xl p-3 border border-white/10">
-                  <span className="w-3 h-3 rounded-full bg-green-400 flex-shrink-0" style={{ animation: "pulse-glow 2s infinite" }} />
-                  <span className="text-green-400 text-xs font-semibold">Techniciens disponibles maintenant</span>
+                <div className="mt-6 flex items-center justify-center gap-3 glass-panel rounded-full px-5 py-3 mx-auto w-max shadow-inner">
+                  <span className="w-3 h-3 rounded-full bg-green-500 shadow-[0_0_10px_#22c55e] flex-shrink-0" style={{ animation: "pulse-glow 2s infinite" }} />
+                  <span className="text-green-400 text-sm font-semibold tracking-wide uppercase">Techniciens disponibles</span>
                 </div>
               </div>
             </div>
@@ -214,9 +218,9 @@ export default function Hero() {
               {stats.map((stat, i) => (
                 <div
                   key={stat.label}
-                  className="bg-white/5 border border-white/10 rounded-2xl p-5 text-center hover:bg-white/10 hover:border-[#f97316]/30 transition-all duration-300"
+                  className="glass-panel rounded-2xl p-6 text-center hover:bg-white/10 hover:border-[#f97316]/50 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 group cursor-default"
                 >
-                  <div className="text-3xl font-black text-[#f97316] mb-1">
+                  <div className="text-4xl font-black text-[#f97316] mb-2 group-hover:scale-105 transition-transform duration-300">
                     <span
                       ref={(el) => {
                         counterRefs.current[i] = el;
@@ -225,7 +229,7 @@ export default function Hero() {
                       {stat.value}
                     </span>
                   </div>
-                  <div className="text-white/55 text-xs font-medium">{stat.label}</div>
+                  <div className="text-white/70 text-xs sm:text-sm font-semibold tracking-wide uppercase">{stat.label}</div>
                 </div>
               ))}
             </div>
