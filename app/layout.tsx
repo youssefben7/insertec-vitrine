@@ -9,7 +9,7 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.insertec.ma"),
+  metadataBase: new URL("https://www.insertec.pro"),
   title: {
     default: "INSERTEC MAROC – Pièces de rechange & Maintenance",
     template: "%s | INSERTEC MAROC",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: "INSERTEC MAROC – Expert en équipements professionnels",
     description:
       "Vente de pièces de rechange et maintenance de matériel de cuisine professionnelle et de machines à laver pour hôtels.",
-    url: "https://www.insertec.ma",
+    url: "https://www.insertec.pro",
     siteName: "INSERTEC MAROC",
     images: [
       {
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     images: ["/images/rechange.jpg"],
   },
   alternates: {
-    canonical: "https://www.insertec.ma",
+    canonical: "https://www.insertec.pro",
   },
   icons: {
     icon: "/images/logo.png",
@@ -66,9 +66,9 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: "INSERTEC MAROC",
-    image: "https://www.insertec.ma/images/logo.png",
+    image: "https://www.insertec.pro/images/logo.png",
     description: "Vente de pièces de rechange, dépannage, réparation et maintenance de matériel de cuisine professionnelle au Maroc.",
-    url: "https://www.insertec.ma",
+    url: "https://www.insertec.pro",
     telephone: "+212522614414",
     address: {
       "@type": "PostalAddress",
@@ -78,7 +78,7 @@ export default function RootLayout({
     },
     areaServed: "MA",
     sameAs: [
-      "https://www.insertec.ma"
+      "https://www.insertec.pro"
     ]
   };
 
