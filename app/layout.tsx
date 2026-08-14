@@ -53,7 +53,9 @@ export const metadata: Metadata = {
     canonical: "https://www.insertec.pro",
   },
   icons: {
-    icon: "/images/logo.png",
+    icon: "/icon.png",
+    shortcut: "/favicon.ico",
+    apple: "/apple-icon.png",
   },
 };
 
@@ -66,7 +68,8 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: "INSERTEC MAROC",
-    image: "https://www.insertec.pro/images/logo.png",
+    image: "https://www.insertec.pro/icon.png",
+    logo: "https://www.insertec.pro/images/logo.png",
     description: "Vente de pièces de rechange, dépannage, réparation et maintenance de matériel de cuisine professionnelle au Maroc.",
     url: "https://www.insertec.pro",
     telephone: "+212522614414",
