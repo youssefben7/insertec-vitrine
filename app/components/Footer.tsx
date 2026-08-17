@@ -376,7 +376,7 @@ export default function Footer() {
             {/* Legal Disclosures Sub-bar */}
             <div className="pt-4 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-2 text-center md:text-left">
               <p className="text-[10px] sm:text-xs text-white/40 tracking-wide leading-relaxed">
-                <strong>INSERTEC SARL AU</strong> — RC: 296519 — IF: 71771832 — Patente: 34216642 — Siège : 6 rue zine ishak n° 7 angle bd ibn tachfine, Casablanca — www.insertec.ma
+                <strong>INSERTEC SARL AU</strong> — RC: 713245 — ICE: 003864984000069 — IF: 71771832 — Patente: 34216642 — Siège : 6 rue zine ishak n° 7 angle bd ibn tachfine, Casablanca — www.insertec.ma
               </p>
             </div>
             <div className="pt-4 text-center">
