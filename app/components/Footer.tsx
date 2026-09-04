@@ -23,8 +23,8 @@ const contactItems = [
       </svg>
     ),
     label: "GSM 1 (Bannière / Page)",
-    value: "0661 61 89 45",
-    href: "tel:0661618945",
+    value: "+212 660-121144",
+    href: "tel:+212660121144",
   },
   {
     id: "footer-gsm2",
@@ -76,11 +76,13 @@ const contactItems = [
 const footerLinks = {
   Services: [
     { label: "Pièces de rechange", href: "#products" },
+    { label: "Conteneurs sur-mesure ✨", href: "#conteneurs" },
     { label: "Catalogue PDF", href: "/catalogue" },
     { label: "Dépannage 24/7", href: "#services" },
     { label: "Maintenance préventive", href: "#services" },
   ],
   Équipements: [
+    { label: "Conteneurs Snacks & Cuisines", href: "#conteneurs" },
     { label: "Cuisine professionnelle", href: "#products" },
     { label: "Machines à laver industrielles", href: "#products" },
     { label: "Catalogue général PDF", href: "/catalogue" },
@@ -302,14 +304,14 @@ export default function Footer() {
                   Fixe: 0522 61 44 14
                 </a>
                 <a
-                  href="tel:0661618945"
+                  href="tel:+212660121144"
                   id="footer-gsm1-link"
                   className="flex items-center gap-3 text-white/50 hover:text-[#f97316] transition-colors duration-200 text-sm group font-semibold"
                 >
                   <svg className="w-4 h-4 text-[#f97316] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
-                  GSM 1: 0661 61 89 45
+                  GSM 1: +212 660-121144
                 </a>
                 <a
                   href="https://wa.me/212608926620"
