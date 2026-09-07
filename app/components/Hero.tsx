@@ -231,7 +231,7 @@ export default function Hero() {
               <div className="relative h-[260px] sm:h-[340px] md:h-[380px] w-full bg-black overflow-hidden">
                 <video
                   ref={videoRef}
-                  src="/images/Insertec Promo 1.mp4"
+                  src="https://bk7y5ps1oidxyo7e.public.blob.vercel-storage.com/Insertec%20Promo%201.mp4"
                   autoPlay
                   loop
                   muted={isMuted}
