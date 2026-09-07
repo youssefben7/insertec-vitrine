@@ -236,6 +236,8 @@ export default function Hero() {
                   loop
                   muted={isMuted}
                   playsInline
+                  preload="metadata"
+                  poster="/images/rechange.jpg"
                   className="w-full h-full object-cover"
                 />
 

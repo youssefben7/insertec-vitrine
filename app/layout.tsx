@@ -88,6 +88,8 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${geistSans.variable} h-full scroll-smooth`}>
       <head>
+        <link rel="preconnect" href="https://bk7y5ps1oidxyo7e.public.blob.vercel-storage.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://bk7y5ps1oidxyo7e.public.blob.vercel-storage.com" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
