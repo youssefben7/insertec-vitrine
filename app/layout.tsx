@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
 
@@ -6,12 +6,21 @@ const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800", "900"],
+  display: "swap",
+  preload: true,
 });
+
+export const viewport: Viewport = {
+  themeColor: "#050d1f",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.insertec.pro"),
   title: {
-    default: "INSERTEC MAROC – Pièces de rechange & Maintenance",
+    default: "INSERTEC MAROC – Pièces de rechange & Maintenance Cuisine Pro",
     template: "%s | INSERTEC MAROC",
   },
   description:
@@ -26,14 +35,14 @@ export const metadata: Metadata = {
     "B2B CHR Maroc",
   ],
   openGraph: {
-    title: "INSERTEC MAROC – Expert en équipements professionnels",
+    title: "INSERTEC MAROC – Expert en équipements professionnels & Maintenance",
     description:
-      "Vente de pièces de rechange et maintenance de matériel de cuisine professionnelle et de machines à laver pour hôtels.",
+      "Vente de pièces de rechange certifiées, dépannage 24/7 et conteneurs aménagés au Maroc.",
     url: "https://www.insertec.pro",
     siteName: "INSERTEC MAROC",
     images: [
       {
-        url: "/images/rechange.jpg",
+        url: "https://www.insertec.pro/images/rechange.jpg",
         width: 1200,
         height: 630,
         alt: "INSERTEC MAROC Pièces de rechange",
@@ -46,8 +55,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "INSERTEC MAROC – Expert en équipements professionnels",
     description:
-      "Vente de pièces de rechange et maintenance de matériel de cuisine professionnelle et de machines à laver pour hôtels.",
-    images: ["/images/rechange.jpg"],
+      "Vente de pièces de rechange et maintenance de matériel de cuisine professionnelle au Maroc.",
+    images: ["https://www.insertec.pro/images/rechange.jpg"],
   },
   alternates: {
     canonical: "https://www.insertec.pro",
