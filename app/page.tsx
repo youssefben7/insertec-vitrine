@@ -10,11 +10,13 @@ import About from "./components/About";
 import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
-  title: "INSERTEC MAROC – Distributeur Fagor Professional, Maintenance Cuisine Pro, Buanderie & Conteneurs",
+  title: "Pièces de Rechange Cuisine Professionnelle Maroc & Blanchisserie | Fagor Pro | INSERTEC",
   description:
-    "INSERTEC MAROC : Distributeur officiel Fagor Professional au Maroc. Vente de laveuses industrielles, séchoirs rotatifs, calandres repasseuses, pièces de rechange d'origine certifiées, dépannage 24/7 et conteneurs aménagés sur-mesure à Casablanca et partout au Maroc.",
+    "Vente de pièces de rechange d'origine pour cuisines professionnelles et buanderies industrielles au Maroc. Distributeur officiel Fagor Professional, dépannage 24/7 et conteneurs aménagés à Casablanca.",
   keywords: [
-    "INSERTEC MAROC",
+    "pièces de rechange cuisine professionnelle maroc",
+    "pièces détachées cuisine pro casablanca",
+    "pièces de rechange machine a laver industrielle maroc",
     "fagor professional maroc",
     "fagor maroc",
     "distributeur fagor professional casablanca",
@@ -24,13 +26,13 @@ export const metadata: Metadata = {
     "table de repassage professionnelle maroc",
     "mannequin de finition maroc",
     "conteneur aménagé maroc",
-    "vente conteneur maritime casablanca",
     "maintenance cuisine professionnelle Casablanca",
     "pièces de rechange cuisine professionnelle Maroc",
     "maintenance machine à laver industrielle Maroc",
     "dépannage buanderie hôtel Casablanca",
     "sav cuisine professionnelle maroc",
-    "dépannage 24/7 cuisine maroc"
+    "dépannage 24/7 cuisine maroc",
+    "INSERTEC MAROC"
   ],
 };
 
