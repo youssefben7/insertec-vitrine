@@ -187,25 +187,16 @@ export default function ContainerSection() {
         
         {/* Section Header */}
         <ScrollReveal className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
-          <div className="inline-flex items-center gap-2.5 bg-[#f97316]/15 border border-[#f97316]/40 rounded-full px-5 py-2 mb-6 shadow-[0_0_20px_rgba(249,115,22,0.2)]">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#f97316] animate-pulse" />
-            <span className="text-[#f97316] text-xs sm:text-sm font-bold tracking-widest uppercase">
-              Nouveau Service 2026 • Sur Mesure
-            </span>
-            <Sparkles className="w-4 h-4 text-[#f97316]" />
+          <div className="inline-flex items-center px-3.5 py-1.5 rounded-md bg-white/5 border border-white/10 text-white/70 text-xs font-semibold tracking-wider uppercase mb-4">
+            Aménagement & Conteneurs Sur-Mesure
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-[1.15] mb-6">
-            Vente & Personnalisation de{" "}
-            <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#f97316] via-[#fb923c] to-[#3b82f6]">
-              Conteneurs Maritimes
-            </span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+            Vente & Personnalisation de Conteneurs
           </h2>
 
-          <p className="text-white/70 text-base sm:text-lg leading-relaxed">
-            Donnez vie à votre projet commercial sans les contraintes d'un local traditionnel ! 
-            INSERTEC transforme des conteneurs 20ft & 40ft en espaces fonctionnels, design et 
-            <strong className="text-white font-semibold"> 100% équipés avec notre matériel professionnel garanti.</strong>
+          <p className="text-white/70 text-base sm:text-lg leading-relaxed font-normal">
+            Solutions modulaires 20ft & 40ft transformées en espaces fonctionnels et entièrement équipées avec notre matériel professionnel garanti.
           </p>
         </ScrollReveal>
 

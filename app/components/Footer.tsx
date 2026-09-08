@@ -75,6 +75,7 @@ const contactItems = [
 
 const footerLinks = {
   Services: [
+    { label: "Gamme Fagor Professional 🔴", href: "#fagor" },
     { label: "Pièces de rechange", href: "#products" },
     { label: "Conteneurs sur-mesure ✨", href: "#conteneurs" },
     { label: "Catalogue PDF", href: "/catalogue" },
@@ -82,11 +83,12 @@ const footerLinks = {
     { label: "Maintenance préventive", href: "#services" },
   ],
   Équipements: [
+    { label: "Laveuses Fagor (11-120kg)", href: "#fagor" },
+    { label: "Séchoirs rotatifs Fagor Touch+", href: "#fagor" },
+    { label: "Calandres & Repasseuses Fagor", href: "#fagor" },
     { label: "Conteneurs Snacks & Cuisines", href: "#conteneurs" },
     { label: "Cuisine professionnelle", href: "#products" },
-    { label: "Machines à laver industrielles", href: "#products" },
     { label: "Catalogue général PDF", href: "/catalogue" },
-    { label: "Buanderie hôtelière", href: "#services" },
   ],
 };
 
@@ -119,16 +121,15 @@ export default function Footer() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Left – CTA text */}
             <ScrollReveal variant="left">
-              <div className="inline-flex items-center gap-2 bg-[#f97316]/15 border border-[#f97316]/30 rounded-full px-4 py-1.5 mb-6">
-                <span className="w-2 h-2 rounded-full bg-[#f97316]" style={{ animation: "pulse-glow 2s infinite" }} />
-                <span className="text-[#f97316] text-sm font-semibold tracking-widest uppercase">Contact & Intervention</span>
+              <div className="inline-flex items-center px-3.5 py-1.5 rounded-md bg-white/5 border border-white/10 mb-4">
+                <span className="text-white/70 text-xs font-semibold tracking-wider uppercase">Contact & Intervention</span>
               </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight mb-6">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-4 tracking-tight">
                 Une panne ?<br />
-                <span className="gradient-text">On intervient maintenant.</span>
+                <span>Intervention d'urgence au Maroc.</span>
               </h2>
-              <p className="text-white/55 text-lg leading-relaxed mb-8">
-                Appelez-nous directement ou envoyez-nous un message. Nos techniciens se déplacent dans tout le Maroc sous 24h.
+              <p className="text-white/70 text-base sm:text-lg leading-relaxed mb-8 font-normal">
+                Appelez-nous directement ou envoyez-nous une demande. Nos techniciens interviennent dans tout le Maroc sous 24h.
               </p>
 
               {/* Contact items */}
@@ -289,7 +290,7 @@ export default function Footer() {
                 </div>
               </div>
               <p className="text-white/40 text-sm leading-relaxed max-w-xs">
-                Votre partenaire expert en pièces de rechange et maintenance d'équipements professionnels de cuisine et de lavage industriel au Maroc.
+                Distributeur officiel Fagor Professional au Maroc. Expert en pièces de rechange d'origine, vente d'équipements de blanchisserie et maintenance de cuisines professionnelles.
               </p>
               {/* Quick contact */}
               <div className="space-y-2.5">

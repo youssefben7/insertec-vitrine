@@ -6,17 +6,13 @@ import {
   Pause, 
   Volume2, 
   VolumeX, 
-  PhoneCall, 
-  BookOpen, 
-  CheckCircle2, 
-  ShieldCheck,
   Maximize2
 } from "lucide-react";
 
 const stats = [
-  { value: "10+", label: "Ans d'expertise B2B" },
-  { value: "500+", label: "Clients satisfaits" },
-  { value: "24/7", label: "Support d'urgence" },
+  { value: "10+", label: "Ans d'expertise" },
+  { value: "500+", label: "Clients B2B" },
+  { value: "24/7", label: "Assistance technique" },
   { value: "2000+", label: "Pièces en stock" },
 ];
 
@@ -99,136 +95,102 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center overflow-hidden hero-bg grid-pattern pt-28 pb-16 lg:pt-36 lg:pb-24"
+      className="relative min-h-[90vh] flex items-center overflow-hidden bg-[#071329] pt-28 pb-16 lg:pt-36 lg:pb-24"
       aria-label="Section d'accueil INSERTEC MAROC"
     >
-      {/* Background ambient glowing orbs */}
+      {/* Subtle Corporate Lighting */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div
-          className="absolute w-[650px] h-[650px] rounded-full opacity-15"
+          className="absolute w-[600px] h-[600px] rounded-full opacity-10"
           style={{
             background: "radial-gradient(circle, #f97316 0%, transparent 70%)",
             top: "-150px",
-            right: "-100px",
-            animation: "float 8s ease-in-out infinite",
+            right: "-50px",
           }}
         />
         <div
           className="absolute w-[500px] h-[500px] rounded-full opacity-10"
           style={{
-            background: "radial-gradient(circle, #3b6abf 0%, transparent 70%)",
+            background: "radial-gradient(circle, #3b82f6 0%, transparent 70%)",
             bottom: "-100px",
-            left: "-100px",
-            animation: "float 10s ease-in-out infinite reverse",
+            left: "-50px",
           }}
         />
+        <div className="absolute inset-0 grid-pattern opacity-10" />
       </div>
 
       <div className="relative z-10 max-w-[1560px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
         {/* Main 2-Column Hero Grid */}
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           
-          {/* Left Column: Welcome Message & 2 Buttons (7 cols on lg) */}
-          <div className="lg:col-span-6 space-y-7 sm:space-y-8">
+          {/* Left Column: Corporate Pitch & Direct CTAs */}
+          <div className="lg:col-span-6 space-y-6 sm:space-y-7">
             
-            {/* Welcome Badge */}
-            <div
-              className="inline-flex items-center gap-2.5 bg-[#f97316]/15 border border-[#f97316]/30 rounded-full px-4 sm:px-5 py-2 shadow-[0_0_20px_rgba(249,115,22,0.15)]"
-              style={{ animation: "fadeInUp 0.6s ease forwards" }}
-            >
-              <span className="w-2 h-2 rounded-full bg-[#f97316]" />
-              <span className="text-[#f97316] text-xs sm:text-sm font-bold tracking-wider uppercase">
-                Bienvenue chez INSERTEC MAROC
-              </span>
+            {/* Clean Professional Tag */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-white/5 border border-white/15 text-white/80 text-xs font-semibold tracking-wide uppercase">
+              <span>INSERTEC MAROC</span>
+              <span className="text-white/30">•</span>
+              <span className="text-[#f97316]">Distributeur Fagor Professional</span>
             </div>
 
-            {/* Headline */}
-            <h1
-              className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-[1.1] tracking-tight drop-shadow-sm"
-              style={{ animation: "fadeInUp 0.7s ease 0.1s both" }}
-            >
-              Votre Partenaire Expert en{" "}
-              <span className="gradient-text">Maintenance</span>,{" "}
-              <span className="gradient-text">Pièces Pro</span> &{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f97316] via-[#fb923c] to-[#3b82f6]">
-                Conteneurs Aménagés
-              </span>
+            {/* Clean, Strong Headline */}
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.12] tracking-tight">
+              Maintenance, Équipements Pro &{" "}
+              <span className="text-[#f97316]">Pièces de Rechange</span>
             </h1>
 
-            {/* Welcome Description */}
-            <p
-              className="text-white/75 text-base sm:text-lg lg:text-xl leading-relaxed font-normal max-w-2xl"
-              style={{ animation: "fadeInUp 0.7s ease 0.2s both" }}
-            >
-              Depuis plus de 10 ans, nous accompagnons les professionnels de l'hôtellerie, de la restauration et de l'industrie au Maroc. De la fourniture de pièces de rechange d'origine certifiées au dépannage 24/7 et à l'aménagement de conteneurs sur-mesure.
+            {/* Corporate Description */}
+            <p className="text-white/70 text-base sm:text-lg leading-relaxed max-w-xl font-normal">
+              Spécialiste au Maroc de la fourniture d'équipements de blanchisserie et cuisine professionnelle <strong>Fagor Professional</strong>, de pièces de rechange d'origine, de maintenance technique 24/7 et d'aménagement de conteneurs professionnels.
             </p>
 
-            {/* The 2 Main Action Buttons */}
-            <div
-              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2"
-              style={{ animation: "fadeInUp 0.7s ease 0.35s both" }}
-            >
+            {/* Action Buttons - Clean & Corporate */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
               {/* Button 1: Demander une intervention */}
               <button
                 onClick={() => scrollTo("contact")}
                 id="hero-cta-intervention"
-                className="group flex items-center justify-center gap-3 bg-gradient-to-r from-[#f97316] to-[#ea580c] text-white font-bold text-base px-8 py-4 rounded-full shadow-[0_0_25px_rgba(249,115,22,0.4)] hover:shadow-[0_0_40px_rgba(249,115,22,0.7)] active:scale-95 focus:ring-4 focus:ring-[#f97316]/40 transition-all duration-300 cursor-pointer min-h-[56px]"
+                className="inline-flex items-center justify-center px-7 py-3.5 rounded-xl bg-[#f97316] hover:bg-[#ea580c] text-white font-bold text-sm sm:text-base shadow-lg hover:shadow-[0_4px_20px_rgba(249,115,22,0.35)] active:scale-95 transition-all duration-200 cursor-pointer min-h-[50px]"
               >
-                <PhoneCall className="w-5 h-5 text-white" />
-                <span>Demander une intervention</span>
-                <svg
-                  className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2.5}
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
+                Demander une intervention
               </button>
 
-              {/* Button 2: Consulter le catalogue */}
+              {/* Button 2: Gamme Fagor Pro */}
+              <button
+                onClick={() => scrollTo("fagor")}
+                id="hero-cta-fagor"
+                className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 border border-white/15 text-white font-semibold text-sm sm:text-base active:scale-95 transition-all duration-200 cursor-pointer min-h-[50px]"
+              >
+                Gamme Fagor Professional
+              </button>
+
+              {/* Button 3: Catalogue */}
               <button
                 onClick={() => scrollTo("products")}
                 id="hero-cta-catalogue"
-                className="group flex items-center justify-center gap-3 glass-panel text-white font-semibold text-base px-8 py-4 rounded-full hover:bg-white/10 hover:border-white/40 active:scale-95 focus:ring-4 focus:ring-white/20 transition-all duration-300 cursor-pointer min-h-[56px] border border-white/20"
+                className="inline-flex items-center justify-center px-5 py-3.5 rounded-xl text-white/80 hover:text-white hover:bg-white/5 font-semibold text-sm sm:text-base transition-all duration-200 cursor-pointer min-h-[50px]"
               >
-                <BookOpen className="w-5 h-5 text-[#f97316] group-hover:scale-110 transition-transform duration-300" />
-                <span>Consulter le catalogue</span>
+                Catalogue Pièces
               </button>
             </div>
 
-            {/* Reassurance Trust Badges */}
-            <div
-              className="flex flex-wrap items-center gap-6 pt-2 text-white/60 text-xs sm:text-sm font-medium"
-              style={{ animation: "fadeInUp 0.7s ease 0.45s both" }}
-            >
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#f97316]" />
-                <span>Intervention sous 24h</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-[#f97316]" />
-                <span>Pièces 100% d'origine certifiées</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#f97316]" />
-                <span>SAV & Garantie au Maroc</span>
-              </div>
+            {/* Professional Reassurance Text */}
+            <div className="pt-2 text-white/50 text-xs sm:text-sm font-medium flex flex-wrap items-center gap-y-2 gap-x-4">
+              <span>Garantie constructeur officielle</span>
+              <span className="text-white/20">•</span>
+              <span>Intervention sous 24h</span>
+              <span className="text-white/20">•</span>
+              <span>Pièces 100% d'origine</span>
             </div>
           </div>
 
-          {/* Right Column: Promotional Video & Stats Grid (6 cols on lg) */}
-          <div className="lg:col-span-6 flex flex-col gap-6" style={{ animation: "fadeInRight 0.8s ease 0.25s both" }}>
+          {/* Right Column: Promotional Video & Clean Stats */}
+          <div className="lg:col-span-6 flex flex-col gap-5">
             
             {/* Video Showcase Card */}
-            <div className="relative rounded-3xl overflow-hidden glass-panel border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,0.6)] group">
+            <div className="relative rounded-2xl overflow-hidden border border-white/15 shadow-2xl bg-black group">
               
-              {/* Glowing top line */}
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#f97316] via-[#fb923c] to-[#3b82f6] z-20" />
-
-              {/* Video Player Container */}
-              <div className="relative h-[260px] sm:h-[340px] md:h-[380px] w-full bg-black overflow-hidden">
+              <div className="relative h-[250px] sm:h-[320px] md:h-[350px] w-full bg-black overflow-hidden">
                 <video
                   ref={videoRef}
                   src="https://bk7y5ps1oidxyo7e.public.blob.vercel-storage.com/Insertec%20Promo%201.mp4"
@@ -241,61 +203,56 @@ export default function Hero() {
                   className="w-full h-full object-cover"
                 />
 
-                {/* Video Dark Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#060e20] via-transparent to-black/30 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#060e20] via-transparent to-black/20 pointer-events-none" />
 
-                {/* Top Overlay Badge */}
-                <div className="absolute top-4 left-4 z-20 flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white text-xs font-semibold">
-                  <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-                  <span>Présentation Vidéo INSERTEC</span>
+                {/* Video Top Label */}
+                <div className="absolute top-3.5 left-3.5 z-20 px-3 py-1 rounded-md bg-black/70 backdrop-blur-md border border-white/15 text-white/90 text-xs font-semibold">
+                  Présentation INSERTEC
                 </div>
 
                 {/* Video Custom Floating Control Bar */}
-                <div className="absolute bottom-4 left-4 right-4 z-20 flex items-center justify-between gap-3 p-2.5 rounded-2xl bg-[#060e20]/80 backdrop-blur-md border border-white/15">
+                <div className="absolute bottom-3.5 left-3.5 right-3.5 z-20 flex items-center justify-between gap-3 p-2 rounded-xl bg-[#060e20]/85 backdrop-blur-md border border-white/15">
                   <div className="flex items-center gap-2">
-                    {/* Play/Pause Button */}
                     <button
                       onClick={togglePlay}
                       aria-label={isPlaying ? "Mettre en pause" : "Lire la vidéo"}
-                      className="w-9 h-9 rounded-xl bg-[#f97316] text-white flex items-center justify-center hover:bg-[#ea580c] active:scale-95 transition-all cursor-pointer shadow-lg"
+                      className="w-8 h-8 rounded-lg bg-[#f97316] text-white flex items-center justify-center hover:bg-[#ea580c] active:scale-95 transition-all cursor-pointer"
                     >
-                      {isPlaying ? <Pause className="w-4 h-4 fill-current" /> : <Play className="w-4 h-4 fill-current ml-0.5" />}
+                      {isPlaying ? <Pause className="w-3.5 h-3.5 fill-current" /> : <Play className="w-3.5 h-3.5 fill-current ml-0.5" />}
                     </button>
 
-                    {/* Mute/Unmute Button */}
                     <button
                       onClick={toggleMute}
                       aria-label={isMuted ? "Activer le son" : "Couper le son"}
-                      className="w-9 h-9 rounded-xl bg-white/10 text-white flex items-center justify-center hover:bg-white/20 active:scale-95 transition-all cursor-pointer"
+                      className="w-8 h-8 rounded-lg bg-white/10 text-white flex items-center justify-center hover:bg-white/20 active:scale-95 transition-all cursor-pointer"
                     >
-                      {isMuted ? <VolumeX className="w-4 h-4 text-white/70" /> : <Volume2 className="w-4 h-4 text-emerald-400" />}
+                      {isMuted ? <VolumeX className="w-3.5 h-3.5 text-white/70" /> : <Volume2 className="w-3.5 h-3.5 text-emerald-400" />}
                     </button>
                   </div>
 
-                  <span className="text-white/70 text-xs font-medium truncate hidden sm:inline">
-                    {isMuted ? "Cliquez pour activer le son 🔊" : "Son activé 🔊"}
+                  <span className="text-white/60 text-xs font-medium truncate hidden sm:inline">
+                    {isMuted ? "Activer le son" : "Son activé"}
                   </span>
 
-                  {/* Fullscreen Button */}
                   <button
                     onClick={handleFullscreen}
                     aria-label="Plein écran"
-                    className="w-9 h-9 rounded-xl bg-white/10 text-white flex items-center justify-center hover:bg-white/20 active:scale-95 transition-all cursor-pointer"
+                    className="w-8 h-8 rounded-lg bg-white/10 text-white flex items-center justify-center hover:bg-white/20 active:scale-95 transition-all cursor-pointer"
                   >
-                    <Maximize2 className="w-4 h-4" />
+                    <Maximize2 className="w-3.5 h-3.5" />
                   </button>
                 </div>
               </div>
             </div>
 
-            {/* 4 Stats Numbers Grid directly integrated */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+            {/* 4 Clean Stats Numbers */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               {stats.map((stat, i) => (
                 <div
                   key={stat.label}
-                  className="glass-panel rounded-2xl p-4 sm:p-5 text-center hover:bg-white/10 hover:border-[#f97316]/50 hover:-translate-y-1 transition-all duration-300 group cursor-default shadow-md"
+                  className="rounded-xl p-4 bg-white/5 border border-white/10 text-center hover:border-white/20 transition-all duration-200"
                 >
-                  <div className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#f97316] mb-1 group-hover:scale-105 transition-transform duration-300">
+                  <div className="text-2xl sm:text-3xl font-extrabold text-[#f97316] mb-0.5">
                     <span
                       ref={(el) => {
                         counterRefs.current[i] = el;
@@ -304,7 +261,7 @@ export default function Hero() {
                       {stat.value}
                     </span>
                   </div>
-                  <div className="text-white/75 text-[11px] sm:text-xs font-semibold tracking-wider uppercase leading-tight">
+                  <div className="text-white/60 text-xs font-medium uppercase tracking-wider">
                     {stat.label}
                   </div>
                 </div>
@@ -314,14 +271,6 @@ export default function Hero() {
           </div>
 
         </div>
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 animate-bounce">
-        <span className="text-white/35 text-[10px] tracking-widest uppercase font-bold">Défiler</span>
-        <svg className="w-4 h-4 text-[#f97316]/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-        </svg>
       </div>
     </section>
   );

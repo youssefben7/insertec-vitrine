@@ -51,16 +51,18 @@ type NavLink = {
 const navLinks: NavLink[] = [
   { label: "Accueil", href: "#hero" },
   { label: "Services", href: "#services" },
+  { label: "Fagor Pro", href: "#fagor", isNew: true },
   {
     label: "Produits",
     href: "#products",
     sublinks: [
       { label: "Vue d'ensemble", href: "#products" },
+      { label: "🔴 Gamme Fagor Professional", href: "#fagor" },
       { label: "✨ Conteneurs Personnalisés", href: "#conteneurs" },
       { label: "Explorer les pièces", href: "/catalogue#product-grid" },
     ],
   },
-  { label: "Conteneurs", href: "#conteneurs", isNew: true },
+  { label: "Conteneurs", href: "#conteneurs" },
   { label: "Catalogue", href: "/catalogue" },
   { label: "À propos", href: "#about" },
   { label: "Contact", href: "#contact" },
@@ -86,6 +88,7 @@ export default function Navbar() {
         const sections = [
           "hero",
           "services",
+          "fagor",
           "products",
           "conteneurs",
           "catalogue-section",
@@ -217,28 +220,28 @@ export default function Navbar() {
           })}
         </nav>
 
-        {/* Right Action Buttons */}
-        <div className="flex items-center gap-3 sm:gap-4">
-          {/* WhatsApp Button */}
+        {/* Right Action Buttons - Icon-only */}
+        <div className="flex items-center gap-2.5 sm:gap-3">
+          {/* WhatsApp Button (Icon only) */}
           <a
             href="https://wa.me/212608926620"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden sm:inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full text-xs xl:text-sm font-semibold border border-emerald-500/40 bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500 hover:text-white hover:shadow-[0_0_20px_rgba(16,185,129,0.4)] active:scale-95 transition-all duration-300"
+            className="w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center border border-emerald-500/40 bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500 hover:text-white hover:shadow-[0_0_20px_rgba(16,185,129,0.4)] active:scale-90 transition-all duration-300"
             title="Contacter sur WhatsApp"
+            aria-label="WhatsApp INSERTEC"
           >
-            <MessageCircle className="w-4 h-4 text-emerald-400 group-hover:text-white" />
-            <span className="hidden xl:inline">WhatsApp</span>
+            <MessageCircle className="w-4 h-4 sm:w-4.5 sm:h-4.5" />
           </a>
 
-          {/* Phone Call Button */}
+          {/* Phone Call Button (Icon only) */}
           <a
             href="tel:+212660121144"
-            className="hidden md:inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full text-xs xl:text-sm font-semibold border border-[#f97316]/40 bg-[#f97316]/10 text-[#f97316] hover:bg-[#f97316] hover:text-white hover:shadow-[0_0_20px_rgba(249,115,22,0.4)] active:scale-95 transition-all duration-300"
-            title="Appeler INSERTEC"
+            className="w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center border border-[#f97316]/40 bg-[#f97316]/10 text-[#f97316] hover:bg-[#f97316] hover:text-white hover:shadow-[0_0_20px_rgba(249,115,22,0.4)] active:scale-90 transition-all duration-300"
+            title="Appeler INSERTEC (+212 660-121144)"
+            aria-label="Appeler INSERTEC"
           >
-            <Phone className="w-4 h-4" />
-            <span className="hidden xl:inline">+212 660-121144</span>
+            <Phone className="w-4 h-4 sm:w-4.5 sm:h-4.5" />
           </a>
 
           {/* Social Icons for large screens */}
