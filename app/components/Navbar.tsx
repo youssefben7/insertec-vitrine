@@ -57,9 +57,9 @@ const navLinks: NavLink[] = [
     href: "#products",
     sublinks: [
       { label: "Vue d'ensemble", href: "#products" },
-      { label: "🔴 Gamme Fagor Professional", href: "#fagor" },
-      { label: "✨ Conteneurs Personnalisés", href: "#conteneurs" },
-      { label: "Explorer les pièces", href: "/catalogue#product-grid" },
+      { label: "Gamme Fagor Professional", href: "#fagor" },
+      { label: "Conteneurs Personnalisés", href: "#conteneurs" },
+      { label: "Pièces de Rechange", href: "/catalogue#product-grid" },
     ],
   },
   { label: "Conteneurs", href: "#conteneurs" },
